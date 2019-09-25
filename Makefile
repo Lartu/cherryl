@@ -2,10 +2,9 @@
 # | Cherryl Makefile |
 # +------------------+
 
-OBJS = cherryl.o
 SOURCE = cherryl.cpp
 OUT = cherryl
-FLAGS = -g -c -Wall -std=gnu++11
+FLAGS = -std=c++11
 #Flags for static compilation on Windows and Linux (not Android)
 ifneq ($(shell uname -s),Darwin)
 ifneq ($(shell uname -o),Android)
@@ -17,12 +16,8 @@ ifeq ($(PREFIX),)
     PREFIX := /usr/local
 endif
 
-all: $(OBJS)
-	$(CXX) -g $(OBJS) -o $(OUT) $(LFLAGS)
-
-cherryl.o: cherryl.cpp
-	$(CXX) $(FLAGS) $(SOURCE)
-
+all: 
+	$(CXX) -g $(SOURCE) -o $(OUT) $(FLAGS) $(LFLAGS)
 
 clean:
 	rm -f cherryl.o cherryl
