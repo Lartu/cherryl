@@ -276,6 +276,9 @@ class cherryInterpreter {
                 else if (tokens[i] == "dup") {
                     state.push(state.top());
                 }
+                else if (tokens[i] == "break") {
+                    return;
+                }
                 else if (tokens[i] == "run") {
                     executeTokens(cherrySplit(state.pop()), state);
                 }

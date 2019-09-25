@@ -25,7 +25,7 @@ clean:
 install: cherryl
 	install -d $(DESTDIR)$(PREFIX)/bin/
 	install -m 775 cherryl $(DESTDIR)$(PREFIX)/bin/
-	ln -s $(DESTDIR)$(PREFIX)/bin/cherryl $(DESTDIR)$(PREFIX)/bin/chy
+	ln -sf $(DESTDIR)$(PREFIX)/bin/cherryl $(DESTDIR)$(PREFIX)/bin/chy
 
 uninstall:
 	rm $(DESTDIR)$(PREFIX)/bin/cherryl
